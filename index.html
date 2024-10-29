@@ -1,17 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy 4th Monthsary</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary, My Love!</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd1dc, #ff99cc);
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Container for the main content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Title styling */
+        h1 {
+            font-family: 'Cursive', sans-serif;
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        /* Text styling */
+        p {
+            font-size: 1.2em;
+            color: #f5f5f5;
+            line-height: 1.6em;
+        }
+
+        /* Image styling */
+        .photo {
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer styling */
+        .footer {
+            font-size: 0.9em;
+            color: #ffe6e6;
+            margin-top: 30px;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+        .heart:after {
+            left: 15px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(-30px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.7; }
+        }
+
+        /* Positioning multiple hearts */
+        .heart1 { top: 20%; left: 30%; animation-delay: 0s; }
+        .heart2 { top: 40%; left: 70%; animation-delay: 1.5s; }
+        .heart3 { top: 60%; left: 50%; animation-delay: 3s; }
+        .heart4 { top: 80%; left: 20%; animation-delay: 4.5s; }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Happy 4th Monthsary, My Love! 💖</h1>
-    <p id="message"></p>
-    <button onclick="showMessage()">Show My Love</button>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Happy 3rd Monthsary, My Love!</h1>
+        <p>Wifeyyy, happy monthsary to us! Thank you for being my everything. I feel so comfortable with you, and no one has ever made me as happy as you do. I love you more than words can say.</p>
+        <p>I’m grateful for every moment we share, for every laugh, every memory, and even our little fights. Through all of it, my love only grows stronger. I can’t wait to spend many more months, years, and lifetimes with you.</p>
+        
+        <!-- Replace the src with your own image URL -->
+        <img class="photo" src="https://ibb.co/fvbXdqG" alt="Our special memory">
+        
+        <p>You are my safe place, my world, and my everything. Happy monthsary, and here’s to many more with you by my side. I love you, always and forever.</p>
+        
+        <div class="footer">With all my love, <br> [Your Name]</div>
+    </div>
+
+    <!-- Floating hearts -->
+    <div class="heart heart1"></div>
+    <div class="heart heart2"></div>
+    <div class="heart heart3"></div>
+    <div class="heart heart4"></div>
+
 </body>
 </html>
