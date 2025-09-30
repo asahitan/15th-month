@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Monthsary ❤️</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthsary Surprise</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="instruction" id="instruction">
-            💌 Touch the envelope to open your message 💌
+  <!-- Sky background -->
+  <div class="sky"></div>
+
+  <!-- Main content -->
+  <div class="container">
+    <p id="instruction" class="instruction">Tap the envelope to open 💌</p>
+
+    <div id="envelopeWrapper" class="envelope-wrapper">
+      <div class="envelope">
+        <div class="back"></div>
+        <div id="letter" class="letter">
+          <h2>Happy Monthsary ❤️</h2>
+          <p>To my love Jenifer,  
+             Thank you for being my happiness every single day.  
+             Even though we are far apart, my heart is always with you.  
+             I love you endlessly. 💕</p>
         </div>
-        
-        <div class="envelope-wrapper" id="envelopeWrapper">
-            <div class="envelope">
-                <div class="back"></div>
-                <div class="letter" id="letter"></div>
-                <div class="flap" id="flap">
-                    <div class="flap-front"></div>
-                </div>
-                <div class="heart"></div>
-            </div>
+        <div id="flap" class="flap">
+          <div class="flap-front"></div>
         </div>
+        <div class="heart"></div>
+      </div>
     </div>
+  </div>
 
-    <div class="message-container" id="messageContainer">
-        <div class="message-box">
-            <h1>Happy Monthsary, My Love! ❤️</h1>
-            <p>
-                Every moment with you feels like a beautiful dream come true. 
-                Thank you for filling my days with love, laughter, and endless joy.
-            </p>
-            <p>
-                You are my sunshine on cloudy days, my comfort in hard times, 
-                and my biggest reason to smile. I'm so grateful for every second we share together.
-            </p>
-            <p>
-                Here's to many more months of making beautiful memories together. 
-                I love you more than words can express! 💕
-            </p>
-            <p style="font-style: italic; color: #e74c3c; margin-top: 20px;">
-                Forever yours,<br>
-                Your Love
-            </p>
-            <button class="close-btn" id="closeBtn">Close 💖</button>
-        </div>
+  <!-- Message popup -->
+  <div id="messageContainer" class="message-container">
+    <div class="message-box">
+      <h1>Happy Monthsary, My Love ❤️</h1>
+      <p>You are my everything, my reason to smile,  
+         and my forever. Distance can never stop my love for you.  
+         I can’t wait for the day we’re finally together. 💖</p>
+      <button id="closeBtn" class="close-btn">Close</button>
     </div>
+  </div>
 
-    <!-- Custom Song -->
-    <audio id="bgMusic" src="song.mp3"></audio>
+  <!-- Music -->
+  <audio id="bgMusic" src="song.mp3"></audio>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
