@@ -35,6 +35,7 @@ const bgMusic = document.getElementById('bgMusic');
 let opened = false;
 let musicStarted = false;
 
+// ❤️ Floating hearts
 function createFloatingHeart() {
   const heart = document.createElement('div');
   heart.className = 'floating-hearts';
@@ -46,24 +47,26 @@ function createFloatingHeart() {
   setTimeout(() => heart.remove(), 5000);
 }
 
+// 🎵 Start music immediately on first tap
 function startMusic() {
   if (!musicStarted) {
-    bgMusic.play().catch(err => {
-      console.log("Music blocked until user interacts:", err);
+    bgMusic.play().then(() => {
+      musicStarted = true;
+      console.log("✅ Music started right away");
+    }).catch(err => {
+      console.log("🚫 Music blocked:", err);
     });
-    musicStarted = true;
   }
 }
 
+// 💌 Open envelope
 function openEnvelope() {
   if (opened) return;
-
   opened = true;
+
   instruction.classList.add('hidden');
   envelopeWrapper.classList.add('opened');
-
   flap.classList.add('open');
-  startMusic(); // 🔥 ensure music starts when envelope opens
 
   setTimeout(() => { letter.classList.add('pull'); }, 800);
 
@@ -73,19 +76,23 @@ function openEnvelope() {
   }, 1800);
 }
 
-// Listen for any first click/tap → start music
-document.body.addEventListener('click', () => {
+// ✅ Guarantee music on first interaction (before opening envelope)
+function firstUserAction() {
   startMusic();
-});
+  document.removeEventListener('click', firstUserAction);
+  document.removeEventListener('touchstart', firstUserAction);
+}
+document.addEventListener('click', firstUserAction);
+document.addEventListener('touchstart', firstUserAction);
 
 // Envelope interaction
 envelopeWrapper.addEventListener('click', openEnvelope);
 envelopeWrapper.addEventListener('touchstart', (e) => {
   e.preventDefault();
   openEnvelope();
-  startMusic();
 });
 
+// Close button
 closeBtn.addEventListener('click', () => {
   messageContainer.classList.remove('show');
 });
