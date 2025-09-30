@@ -16,7 +16,19 @@ body {
     color: white;
 }
 
-/* === STARS === */
+/* Sky background */
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Stars */
 .star {
     position: absolute;
     background: white;
@@ -30,7 +42,7 @@ body {
     to { opacity: 1; }
 }
 
-/* === SHOOTING STARS === */
+/* Shooting Stars */
 .shooting-star {
     position: absolute;
     width: 2px;
@@ -52,7 +64,7 @@ body {
     }
 }
 
-/* === CONTAINER === */
+/* Container */
 .container {
     position: relative;
     width: 100%;
@@ -62,10 +74,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 5; /* on top of stars */
+    z-index: 5;
 }
 
-/* === INSTRUCTIONS === */
 .instruction {
     text-align: center;
     color: white;
@@ -86,7 +97,7 @@ body {
     opacity: 0;
 }
 
-/* === ENVELOPE === */
+/* Envelope */
 .envelope-wrapper {
     position: relative;
     width: 100%;
@@ -95,7 +106,7 @@ body {
     cursor: pointer;
     transition: transform 0.3s;
     aspect-ratio: 1.5 / 1;
-    z-index: 10; /* stay above stars */
+    z-index: 10;
 }
 
 .envelope-wrapper:hover {
@@ -228,7 +239,7 @@ body {
     }
 }
 
-/* === MESSAGE POPUP === */
+/* Message Popup */
 .message-container {
     position: fixed;
     top: 0;
@@ -303,7 +314,7 @@ body {
     background: #c0392b;
 }
 
-/* === FLOATING HEARTS === */
+/* Floating Hearts */
 .floating-hearts {
     position: fixed;
     width: 20px;
