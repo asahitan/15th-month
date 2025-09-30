@@ -5,6 +5,7 @@ const messageContainer = document.getElementById('messageContainer');
 const instruction = document.getElementById('instruction');
 const closeBtn = document.getElementById('closeBtn');
 const bgMusic = document.getElementById('bgMusic');
+const sky = document.querySelector('.sky');
 let opened = false;
 
 // === STARRY BACKGROUND ===
@@ -18,7 +19,7 @@ function createStars(num) {
         star.style.top = Math.random() * window.innerHeight + 'px';
         star.style.left = Math.random() * window.innerWidth + 'px';
         star.style.animationDuration = 2 + Math.random() * 3 + 's';
-        document.body.appendChild(star);
+        sky.appendChild(star);
     }
 }
 
@@ -27,11 +28,13 @@ function createShootingStar() {
     shootingStar.className = 'shooting-star';
     shootingStar.style.top = Math.random() * window.innerHeight / 2 + 'px';
     shootingStar.style.left = window.innerWidth + 'px';
-    document.body.appendChild(shootingStar);
+    shootingStar.style.height = 50 + Math.random() * 50 + 'px'; // random length
+    shootingStar.style.animationDuration = 0.8 + Math.random() * 0.7 + 's'; // random speed
+    sky.appendChild(shootingStar);
 
     setTimeout(() => {
         shootingStar.remove();
-    }, 1000);
+    }, 1500);
 }
 
 // Initialize stars
@@ -39,7 +42,7 @@ createStars(100);
 // Shooting stars every few seconds
 setInterval(createShootingStar, 4000);
 
-// === HEARTS ===
+// === FLOATING HEARTS ===
 function createFloatingHeart() {
     const heart = document.createElement('div');
     heart.className = 'floating-hearts';
