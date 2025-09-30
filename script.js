@@ -33,6 +33,7 @@ const closeBtn = document.getElementById('closeBtn');
 const bgMusic = document.getElementById('bgMusic');
 
 let opened = false;
+let musicStarted = false;
 
 function createFloatingHeart() {
   const heart = document.createElement('div');
@@ -45,6 +46,15 @@ function createFloatingHeart() {
   setTimeout(() => heart.remove(), 5000);
 }
 
+function startMusic() {
+  if (!musicStarted) {
+    bgMusic.play().catch(err => {
+      console.log("Music blocked until user interacts:", err);
+    });
+    musicStarted = true;
+  }
+}
+
 function openEnvelope() {
   if (opened) return;
 
@@ -53,7 +63,7 @@ function openEnvelope() {
   envelopeWrapper.classList.add('opened');
 
   flap.classList.add('open');
-  bgMusic.play(); // Start custom music
+  startMusic(); // 🔥 ensure music starts when envelope opens
 
   setTimeout(() => { letter.classList.add('pull'); }, 800);
 
@@ -63,10 +73,17 @@ function openEnvelope() {
   }, 1800);
 }
 
+// Listen for any first click/tap → start music
+document.body.addEventListener('click', () => {
+  startMusic();
+});
+
+// Envelope interaction
 envelopeWrapper.addEventListener('click', openEnvelope);
 envelopeWrapper.addEventListener('touchstart', (e) => {
   e.preventDefault();
   openEnvelope();
+  startMusic();
 });
 
 closeBtn.addEventListener('click', () => {
