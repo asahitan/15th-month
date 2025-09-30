@@ -15,7 +15,7 @@ body {
   position: relative;
 }
 
-/* Night sky */
+/* 🌌 Night sky background */
 .night-sky {
   position: fixed;
   top: 0;
@@ -57,6 +57,7 @@ body {
   }
 }
 
+/* 📩 Envelope Container */
 .container {
   position: relative;
   width: 100%;
@@ -154,6 +155,7 @@ body {
   z-index: 2;
 }
 
+/* ✅ Responsive flap that always matches envelope width */
 .flap-front {
   position: absolute;
   width: 0;
@@ -161,24 +163,17 @@ body {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-top: 133px solid #d4b5a0;
+  border-left: 50% solid transparent;
+  border-right: 50% solid transparent;
+  border-top: 33% solid #d4b5a0;
   transform-origin: top center;
-}
-
-@media (max-width: 400px) {
-  .flap-front {
-    border-left: calc(50vw - 26px) solid transparent;
-    border-right: calc(50vw - 10px) solid transparent;
-    border-top: calc(33vw - 7px) solid #d4b5a0;
-  }
 }
 
 .flap.open {
   transform: rotateX(180deg);
 }
 
+/* ❤️ Heart on envelope */
 .heart {
   position: absolute;
   width: 40px;
@@ -230,6 +225,7 @@ body {
   }
 }
 
+/* 💌 Message modal */
 .message-container {
   position: fixed;
   top: 0;
@@ -304,6 +300,7 @@ body {
   background: #c0392b;
 }
 
+/* 💕 Floating hearts */
 .floating-hearts {
   position: fixed;
   width: 20px;
@@ -317,7 +314,7 @@ body {
   font-size: 20px;
 }
 
-/* Hide hearts until envelope opened */
+/* Hide hearts until envelope is opened */
 .envelope-wrapper:not(.opened) .floating-hearts {
   display: none;
 }
