@@ -7,44 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Sky background -->
-  <div class="sky"></div>
-
-  <!-- Main content -->
-  <div class="container">
-    <p id="instruction" class="instruction">Tap the envelope to open 💌</p>
-
-    <div id="envelopeWrapper" class="envelope-wrapper">
-      <div class="envelope">
-        <div class="back"></div>
-        <div id="letter" class="letter">
+  <!-- Envelope -->
+  <div id="envelopeWrapper">
+    <div id="envelopeBody">
+      <div id="flap"></div>
+      <div id="letter">
+        <div id="messageContainer">
           <h2>Happy Monthsary ❤️</h2>
-          <p>To my love Jenifer,  
-             Thank you for being my happiness every single day.  
-             Even though we are far apart, my heart is always with you.  
-             I love you endlessly. 💕</p>
+          <p>To my love Jenifer, you are my happiness every single day.  
+          Even if we’re far apart, my heart is always with you.  
+          I love you endlessly. 💕</p>
+          <button id="closeBtn">Close</button>
         </div>
-        <div id="flap" class="flap">
-          <div class="flap-front"></div>
-        </div>
-        <div class="heart"></div>
       </div>
     </div>
   </div>
 
-  <!-- Message popup -->
-  <div id="messageContainer" class="message-container">
-    <div class="message-box">
-      <h1>Happy Monthsary, My Love ❤️</h1>
-      <p>You are my everything, my reason to smile,  
-         and my forever. Distance can never stop my love for you.  
-         I can’t wait for the day we’re finally together. 💖</p>
-      <button id="closeBtn" class="close-btn">Close</button>
-    </div>
-  </div>
-
   <!-- Music -->
-  <audio id="bgMusic" src="song.mp3"></audio>
+  <audio id="bgMusic" src="your-song.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
