@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-
-<html>
-
-  <head>
-
-    <title>heart aanimation</title>
-
-    <meta name="Generator" content="EditPlus" />
-
-    <meta name="Author" content="" />
-
-    <meta name="Keywords" content="" />
-
-    <meta name="Description" content="" />
-
-    <link rel="stylesheet" href="styles.css" />
-
-  </head>
-
-  <body>
-
-    <div class="box">
-
-      <canvas id="pinkboard"></canvas> 
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="instruction" id="instruction">
+            💌 Touch the envelope to open your message 💌
+        </div>
+        
+        <div class="envelope-wrapper" id="envelopeWrapper">
+            <div class="envelope">
+                <div class="back"></div>
+                <div class="letter" id="letter"></div>
+                <div class="flap" id="flap">
+                    <div class="flap-front"></div>
+                </div>
+                <div class="heart"></div>
+            </div>
+        </div>
     </div>
 
+    <div class="message-container" id="messageContainer">
+        <div class="message-box">
+            <h1>Happy Monthsary, My Love! ❤️</h1>
+            <p>
+                Every moment with you feels like a beautiful dream come true. 
+                Thank you for filling my days with love, laughter, and endless joy.
+            </p>
+            <p>
+                You are my sunshine on cloudy days, my comfort in hard times, 
+                and my biggest reason to smile. I'm so grateful for every second we share together.
+            </p>
+            <p>
+                Here's to many more months of making beautiful memories together. 
+                I love you more than words can express! 💕
+            </p>
+            <p style="font-style: italic; color: #e74c3c; margin-top: 20px;">
+                Forever yours,<br>
+                Your Love
+            </p>
+            <button class="close-btn" id="closeBtn">Close 💖</button>
+        </div>
+    </div>
+
+    <!-- Custom Song -->
+    <audio id="bgMusic" src="song.mp3"></audio>
+
     <script src="script.js"></script>
-
-  </body>
-
+</body>
 </html>
