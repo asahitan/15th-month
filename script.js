@@ -2,88 +2,68 @@ const envelopeWrapper = document.getElementById('envelopeWrapper');
 const flap = document.getElementById('flap');
 const letter = document.getElementById('letter');
 const messageContainer = document.getElementById('messageContainer');
-const instruction = document.getElementById('instruction');
 const closeBtn = document.getElementById('closeBtn');
 const bgMusic = document.getElementById('bgMusic');
-const sky = document.querySelector('.sky');
 let opened = false;
 
-// === STARRY BACKGROUND ===
-function createStars(num) {
-    for (let i = 0; i < num; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 2 + 1 + 'px';
-        star.style.width = size;
-        star.style.height = size;
-        star.style.top = Math.random() * window.innerHeight + 'px';
-        star.style.left = Math.random() * window.innerWidth + 'px';
-        star.style.animationDuration = 2 + Math.random() * 3 + 's';
-        sky.appendChild(star);
-    }
-}
-
-function createShootingStar() {
-    const shootingStar = document.createElement('div');
-    shootingStar.className = 'shooting-star';
-    shootingStar.style.top = Math.random() * window.innerHeight / 2 + 'px';
-    shootingStar.style.left = window.innerWidth + 'px';
-    shootingStar.style.height = 50 + Math.random() * 50 + 'px'; // random length
-    shootingStar.style.animationDuration = 0.8 + Math.random() * 0.7 + 's'; // random speed
-    sky.appendChild(shootingStar);
-
-    setTimeout(() => {
-        shootingStar.remove();
-    }, 1500);
-}
-
-// Initialize stars
-createStars(100);
-// Shooting stars every few seconds
-setInterval(createShootingStar, 4000);
-
-// === FLOATING HEARTS ===
+// Floating hearts
 function createFloatingHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'floating-hearts';
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.top = window.innerHeight + 'px';
-    heart.style.animation = `float ${3 + Math.random() * 2}s linear`;
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+  const heart = document.createElement('div');
+  heart.className = 'floating-hearts';
+  heart.innerHTML = '💖';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.top = window.innerHeight + 'px';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
 }
 
-// === ENVELOPE INTERACTION ===
+// Stars
+function createStars() {
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = star.style.height = Math.random() * 2 + 'px';
+    star.style.top = Math.random() * window.innerHeight + 'px';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+    document.body.appendChild(star);
+  }
+}
+
+// Shooting stars
+function createShootingStar() {
+  const shootingStar = document.createElement('div');
+  shootingStar.className = 'shooting-star';
+  shootingStar.style.top = Math.random() * window.innerHeight / 2 + 'px';
+  shootingStar.style.left = Math.random() * window.innerWidth + 'px';
+  document.body.appendChild(shootingStar);
+  setTimeout(() => shootingStar.remove(), 1000);
+}
+
+// Envelope click
 envelopeWrapper.addEventListener('click', function () {
-    if (opened) return;
-    opened = true;
+  if (opened) return;
+  opened = true;
 
-    instruction.classList.add('hidden');
-    envelopeWrapper.classList.add('opened');
+  flap.classList.add('open');
+  bgMusic.play();
 
-    // Play custom music
-    bgMusic.play();
+  setTimeout(() => {
+    letter.classList.add('pull');
+  }, 800);
 
-    // Open flap
-    flap.classList.add('open');
-
-    // Pull out letter
-    setTimeout(() => {
-        letter.classList.add('pull');
-    }, 800);
-
-    // Show message
-    setTimeout(() => {
-        messageContainer.classList.add('show');
-        setInterval(createFloatingHeart, 300);
-    }, 1800);
+  setTimeout(() => {
+    messageContainer.classList.add('show');
+    setInterval(createFloatingHeart, 400);
+  }, 1800);
 });
 
+// Close button
 closeBtn.addEventListener('click', function () {
-    messageContainer.classList.remove('show');
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
+  messageContainer.classList.remove('show');
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
 });
+
+// Init stars + shooting stars
+createStars();
+setInterval(createShootingStar, 3000);
